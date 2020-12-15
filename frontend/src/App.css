@@ -1,0 +1,11 @@
+.courseCard{
+    margin: 2vh;
+    box-shadow: 0.1vw 0.1vw 0.1vw 0.1vw #888888
+}
+.courseCard :hover{
+    zoom: 2;
+}
+
+a:visited{
+  color: white;
+}
