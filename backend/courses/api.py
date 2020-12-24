@@ -9,14 +9,13 @@ from users.api import UserAPI
 from .serializers import CourseSerializer, PeopleVoteSerializer
 
 # Models
-from .models import Course, PeopleVote
+from .models import Course
 
 # Completed
 class CoursesView(APIView):
     def get(self, request):
         course = Course.objects.all().order_by('courseName')
         serializer = CourseSerializer(course, many=True)
-        print(serializer)
         return Response(serializer.data)
 
     def post(self, request):
@@ -33,7 +32,6 @@ class AddRating(generics.GenericAPIView):
         return Response({'status': False, 'message': 'Method not Allowed'})
 
     def post(self, request,  *args, **kwargs):
-        print(request.user.id)
         serializer = self.get_serializer(data={'user':request.user.id, 'course': int(request.data['course']), 'stars': int(request.data['stars'])})
         # serializer.user = user
         serializer.stars = 5

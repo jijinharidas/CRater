@@ -1,14 +1,16 @@
 import Home from "./components/Accounts/AccountsPage";
 import HomePage from "./components/Home/HomePage";
-import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { loadLoggedin } from './localStorage';
 function App() {
+  const loggedIn = loadLoggedin()
   return (
-    <div className="App" style={{ backgroundImage: "url('https://cdn.wallpapersafari.com/32/44/U9WNQj.jpg')", backgroundSize: "cover", backgroundRepeat: "no-repeat"}}>
-      <Navbar />
+    <div
+      className="App"
+      style={{ backgroundColor: "#ffffff" }}>
       <Router>
         <Route path="/" exact component={HomePage} />
-        <Route path="/account" component={Home} />
+        <Route path="/account" component={(loggedIn === 'loggedIn') ? HomePage : Home} />
       </Router>
     </div>
   );

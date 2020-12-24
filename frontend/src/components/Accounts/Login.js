@@ -3,7 +3,7 @@ import { AccountCircle, LockRounded } from "@material-ui/icons/";
 import React, { useState } from "react";
 import axios from "axios";
 import { useHistory } from 'react-router-dom';
-import { saveState } from '../../localStorage';
+import { saveState, saveLoggedin } from '../../localStorage';
 
 
 const checkLoginForm = (username, password) => {
@@ -58,8 +58,9 @@ const Login = (props) => {
                         axios
                             .post(`${props.url}/users/api/auth/login`, req)
                             .then((response) => {
-                                console.log(response.data)
-                                saveState(response.data.token)
+                                console.log(response.data);
+                                saveState(response.data.token);
+                                saveLoggedin('loggedIn');
                                 history.push('/')
                             })
                             .catch((err) => console.log(err));

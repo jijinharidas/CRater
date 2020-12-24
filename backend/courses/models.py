@@ -11,8 +11,13 @@ class Course(models.Model):
     coursePlatform = models.CharField(max_length=30)
     courseTotalVotes = models.IntegerField(default=0)
     courseTotalVoters = models.IntegerField(default=0)
-    courseCoverPic = models.ImageField(upload_to='images', default='images/thumbnail.jpg')
-    
+
+    def userDirectory(self, instance):
+        return 'images/{0}.jpg'.format(self.courseID)
+
+    courseCoverPic = models.ImageField(upload_to=userDirectory, default='images/thumbnail.jpg')
+    courseCoverPicLink = userDirectory
+
     @property
     def courseAverageRating(self):
         if(self.courseTotalVotes == 0 or self.courseTotalVoters == 0):

@@ -9,3 +9,47 @@
 a:visited{
   color: white;
 }
+
+.courseCardContainer{
+  width: 30vw;
+  min-height: 100%;
+  max-height: 100%; 
+  border-radius: 1vw;
+  background-color: white; 
+  border: 1vh solid #000000;
+}
+
+.ratingButton{
+  width: 100%;
+  background-color: #000000;
+  color: white;
+}
+
+.courseCardImageContainer{
+  margin: 4%;
+  background-color: #FFFFFF;
+}
+
+.courseCardDetialsContainer{
+  width: 92%;
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  margin-left: 4%;
+  margin-right: 4%;
+}
+
+.courseCardContent{
+  width: 40ch;
+  text-align: start;
+  font-size: small;
+}
+
+
+.ratingCard{
+  height: 50vh;
+  position: static;
+  top: 0vh;
+  left: 20%;
+  border: '0.5vh solid black'
+}
