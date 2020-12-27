@@ -4,6 +4,7 @@ import Register from './Register';
 import { Grid } from '@material-ui/core';
 import Navbar from '../Navbar/Navbar';
 import { url } from '../../Creds'
+import Illustration from '../../assets/Illustration.png';
 
 class Home extends React.Component {
   constructor(props) {
@@ -25,10 +26,9 @@ class Home extends React.Component {
         <Navbar />
         <Grid container style={{ minHeight: '100vh' }}>
           <Grid
-            container
             item
             xs={12}
-            sm={12}
+            sm={6}
             alignItems="column"
             direction="column"
             justify="space-between"
@@ -38,6 +38,9 @@ class Home extends React.Component {
             {this.getComponent()}
             <div />
             <div />
+          </Grid>
+          <Grid sm={6}>
+            <img src={Illustration} />
           </Grid>
         </Grid>
       </div>

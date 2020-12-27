@@ -1,8 +1,8 @@
-import { TextField, Button, Grid, InputAdornment } from "@material-ui/core/";
-import { AccountCircle, LockRounded, MailRounded } from "@material-ui/icons/";
+import { TextField, Button, Grid } from "@material-ui/core/";
 import React, { useState } from "react";
 import axios from "axios";
-
+import '../../App.css';
+import '../../styles/Accounts.css';
 
 const checkRegisterForm = (
     username,
@@ -40,72 +40,62 @@ const Register = (props) => {
             justify="space-between"
             style={{ padding: 10 }}
         >
-            <div style={{ display: 'flex', flexDirection: 'column', maxWidth: 400, minWidth: 300, padding: 50 }}>
+            <div className="accountsContainer">
+                <label style={{ color: '#F2C94C' }} for="username"> Username</label>
                 <TextField
                     value={username}
                     onChange={(e) => changeUsername(e.target.value)}
-                    style={{ marginTop: "1.5vh" }}
+
                     id="username"
-                    label="Username"
-                    InputProps={{ startAdornment: <InputAdornment position="start"> <AccountCircle /> </InputAdornment> }}
                     required
                 />
+                <div style={{ height: 20 }} />
+                <label style={{ color: '#F2C94C' }} for="emailID">Email</label>
                 <TextField
                     value={emailID}
                     onChange={(e) => changeEmailID(e.target.value)}
-                    style={{ marginTop: "1.5vh" }}
                     id="emailID"
-                    label="Email ID"
-                    InputProps={{ startAdornment: <InputAdornment position="start"> <MailRounded /> </InputAdornment> }}
                     required
                 />
-                <br />
+                <div style={{ height: 20 }} />
+                <label style={{ color: '#F2C94C' }} for="firstName">First Name</label>
                 <TextField
                     value={firstName}
                     onChange={(e) => changeFirstname(e.target.value)}
-                    style={{ marginTop: "1.5vh" }}
+
                     id="firstName"
-                    label="First Name"
-                    InputProps={{ startAdornment: <InputAdornment position="start"> <AccountCircle /> </InputAdornment> }}
                     required
                 />
-                <br />
+                <div style={{ height: 20 }} />
+                <label style={{ color: '#F2C94C' }} for="lastName">Last Name</label>
                 <TextField
                     value={lastName}
                     onChange={(e) => changeLastname(e.target.value)}
-                    style={{ marginTop: "1.5vh" }}
                     id="lastName"
-                    label="Last Name"
-                    InputProps={{ startAdornment: <InputAdornment position="start"> <AccountCircle /> </InputAdornment> }}
                     required
                 />
-                <br />
+                <div style={{ height: 20 }} />
+                <label style={{ color: '#F2C94C' }} for="password">Password</label>
                 <TextField
                     value={password}
                     onChange={(e) => changePassword(e.target.value)}
                     type="password"
-                    style={{ marginTop: "1.5vh" }}
                     id="password"
-                    label="Password"
-                    InputProps={{ startAdornment: <InputAdornment position="start"> <LockRounded /> </InputAdornment> }}
                     required
                 />
-                <br />
+                <div style={{ height: 20 }} />
+                <label style={{ color: '#F2C94C' }} for="repassword">Password Again</label>
                 <TextField
                     value={rePassword}
                     onChange={(e) => changeRePassword(e.target.value)}
                     type="password"
-                    style={{ marginTop: "1.5vh" }}
                     id="repassword"
-                    label="Retype Password"
-                    InputProps={{ startAdornment: <InputAdornment position="start"> <LockRounded /> </InputAdornment> }}
                     required
                 />
-                <br />
+                <div style={{ height: 20 }} />
                 <Button
                     style={{ marginTop: "1.5vh", cursor: "pointer" }}
-                    variant="contained"
-                    color="primary"
+                    className="loginButton"
                     disabled={checkRegisterForm(
                         username,
                         password,
@@ -130,8 +120,8 @@ const Register = (props) => {
                 >
                     Register
                 </Button>
-                <br />
-                <Button style={{ marginTop: "1.5vh" }} onClick={props.change}>
+                <div style={{ height: 20 }} />
+                <Button style={{ color: "#F2C94C" }} onClick={props.change}>
                     Login?
                 </Button>
             </div>

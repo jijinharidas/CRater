@@ -7,7 +7,7 @@ function App() {
   return (
     <div
       className="App"
-      style={{ backgroundColor: "#ffffff" }}>
+      style={{ backgroundColor: "#100E17" }}>
       <Router>
         <Route path="/" exact component={HomePage} />
         <Route path="/account" component={(loggedIn === 'loggedIn') ? HomePage : Home} />

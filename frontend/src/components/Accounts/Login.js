@@ -1,10 +1,10 @@
-import { TextField, Button, Grid, InputAdornment } from "@material-ui/core/";
-import { AccountCircle, LockRounded } from "@material-ui/icons/";
+import { TextField, Button, Grid } from "@material-ui/core/";
 import React, { useState } from "react";
 import axios from "axios";
 import { useHistory } from 'react-router-dom';
 import { saveState, saveLoggedin } from '../../localStorage';
-
+import '../../App.css';
+import '../../styles/Accounts.css';
 
 const checkLoginForm = (username, password) => {
     if (username.length > 0 && password.length > 0) {
@@ -27,29 +27,26 @@ const Login = (props) => {
             justify="space-between"
             style={{ padding: 10 }}
         >
-            <div style={{ display: 'flex', flexDirection: 'column', maxWidth: 400, minWidth: 300, padding:50 }}>
+            <div className="accountsContainer">
+                <label style={{ color: '#F2C94C' }} for="username"> Username</label>
                 <TextField
                     value={username}
                     onChange={(e) => changeUsername(e.target.value)}
                     id="username"
-                    label="Username"
-                    InputProps={{ startAdornment: <InputAdornment position="start"> <AccountCircle /> </InputAdornment> }}
                     required
                 />
                 <div style={{ height: 20 }} />
+                <label style={{ color: '#F2C94C' }} for="password"> Password</label>
                 <TextField
                     value={password}
                     onChange={(e) => changePassword(e.target.value)}
                     type="password"
                     id="password"
-                    label="Password"
-                    InputProps={{ startAdornment: <InputAdornment position="start"> <LockRounded /> </InputAdornment> }}
                     required
                 />
                 <div style={{ height: 20 }} />
                 <Button
-                    variant="contained"
-                    color="primary"
+                    className="loginButton"
                     disabled={checkLoginForm(username, password)}
                     onClick={() => {
                         const req = {};
@@ -69,7 +66,7 @@ const Login = (props) => {
                     Login
                 </Button>
                 <div style={{ height: 20 }} />
-                <Button onClick={props.change}>
+                <Button style={{ color: "#F2C94C" }} onClick={props.change}>
                     Register?
                 </Button>
             </div>

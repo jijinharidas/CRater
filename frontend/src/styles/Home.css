@@ -1,0 +1,90 @@
+.courseCardContainer {
+  width: 25vw;
+  margin-top: 10vh;
+  margin-right: 2vw;
+  background: transparent;
+}
+
+.mainCourseCard {
+  background-color: #211D2C;
+  height: 80vh;
+  width: 25vw;
+  border-radius: 1vw;
+}
+
+.courseCardImageContainer {
+    margin: 0 auto;
+    margin-top: 1vh;
+  background: transparent;
+}
+
+.courseCardDetialsContainer {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  margin-left: 4%;
+  margin-right: 4%;
+  margin-top: 0%;
+}
+
+.courseCardContent {
+  width: 40ch;
+  text-align: start;
+  font-size: small;
+  font-family: Futura, Trebuchet MS, Arial, sans-serif;
+  font-weight: medium;
+}
+
+.courseCardImage {
+  width: 18vw;
+  height: 20vh;
+  border-radius: 1vw;
+}
+
+.courseCardTitle {
+  font-family: Futura, Trebuchet MS, Arial, sans-serif;
+  font-weight: bold;
+  font-size: medium;
+}
+
+.ratingButton {
+  width: 60%;
+  left: 20%;
+  right: 20%;
+  margin: 0 auto;
+  background-color: #f2c94c;
+  color: #100e17;
+  background-image: linear-gradient(
+    to right,
+    #f2c94c,
+    #eeb865,
+    #efaf5d,
+    #f2994a
+  );
+}
+
+p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+p:hover{
+    overflow: visible;
+}
+
+.ratingCardContainer {
+  width: 25vw;
+  background-color: #211D2C;
+}
+
+
+.ratingCardDetialsContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #211D2C;
+  margin-top: 0%;
+}

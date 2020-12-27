@@ -1,14 +1,16 @@
-import Grid from '@material-ui/core/Grid';
-import React from 'react';
+import Grid from "@material-ui/core/Grid";
+import React from "react";
 import axios from "axios";
-import CourseCard from './CourseCard';
+import CourseCard from "./CourseCard";
 import "../../App.css";
-import Cookies from 'universal-cookie';
+import Cookies from "universal-cookie";
 import Navbar from "../Navbar/Navbar";
-import { url } from '../../Creds'
+import { url } from "../../Creds";
+import "../../styles/Home.css";
+
 // Add styles
 // Make the cards weight and height fixed
-// Make the image fill the card 
+// Make the image fill the card
 // Add stars
 
 class HomePage extends React.Component {
@@ -19,12 +21,13 @@ class HomePage extends React.Component {
   }
 
   getCourse = () => {
-    const courseurl = `${url}/courses`
-    axios.get(courseurl)
+    const courseurl = `${url}/courses`;
+    axios
+      .get(courseurl)
       .then((response) => this.setState({ courses: response.data }))
       .then(() => console.log(this.state.courses))
-      .catch(() => console.log('Some Error Occured'));
-  }
+      .catch(() => console.log("Some Error Occured"));
+  };
   componentDidMount() {
     this.getCourse();
   }
@@ -36,16 +39,16 @@ class HomePage extends React.Component {
     return (
       <div>
         <Navbar />
-        <Grid style={{ marginTop: '5%' }} container spacing={1}>
-          <Grid item xs={12}>
-            <Grid container justify="center">
-              {this.state.courses.map((value) => (
-                <Grid key={value.courseID} item style={{ margin: '1vw' }}>
-                  <CourseCard details={value} />
-                </Grid>
-              ))}
+        <Grid
+          container
+          // style={{ margin: "1vw", padding: "1vw" }}
+          justify="center"
+        >
+          {this.state.courses.map((value) => (
+            <Grid key={value.courseID} item>
+              <CourseCard details={value} />
             </Grid>
-          </Grid>
+          ))}
         </Grid>
       </div>
     );
