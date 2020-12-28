@@ -9,7 +9,10 @@ import "../../styles/Home.css";
 
 const CourseCard = (props) => {
   return (
-    <Card className="courseCardContainer" style={{ background: "transparent", border: "0px", boxShadow: "none" }}>
+    <Card
+      className="courseCardContainer"
+      style={{ background: "transparent", border: "0px", boxShadow: "none" }}
+    >
       <Grid
         container
         alignItems="center"
@@ -37,12 +40,8 @@ const CourseCard = (props) => {
                   {props.details.courseName}
                 </a>
               </p>
-              <p>
-                Instructor: {props.details.courseInstructor}
-              </p>
-              <p>
-                Platform: {props.details.coursePlatform}
-              </p>
+              <p>Instructor: {props.details.courseInstructor}</p>
+              <p>Platform: {props.details.coursePlatform}</p>
               <p>
                 Rating:{" "}
                 <span>
@@ -50,15 +49,15 @@ const CourseCard = (props) => {
                     Math.round(
                       (props.details.courseTotalVotes /
                         props.details.courseTotalVoters) *
-                      10
+                        10
                     ) / 10
                   )
                     ? 0
                     : Math.round(
-                      (props.details.courseTotalVotes /
-                        props.details.courseTotalVoters) *
-                      10
-                    ) / 10}
+                        (props.details.courseTotalVotes /
+                          props.details.courseTotalVoters) *
+                          10
+                      ) / 10}
                 </span>
               </p>
               <p>Total Votes: {props.details.courseTotalVoters}</p>
@@ -66,13 +65,7 @@ const CourseCard = (props) => {
           </div>
           <CardContent>
             <Popup
-              trigger={
-                <Button
-                  className="ratingButton"
-                >
-                  Rate
-                </Button>
-              }
+              trigger={<Button className="ratingButton">Rate</Button>}
               position="top center left"
             >
               <RatingCard details={props.details} />
