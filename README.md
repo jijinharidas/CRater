@@ -4,11 +4,15 @@ Built with Django and React.
 Still in beta mode.
 
 * Has a secure Login system built using django-rest-knox
-![ScreenCapture 1](https://github.com/jijinkh/CRater/blob/main/ScreenCapture/3.gif)
+	* ![ScreenCapture 1](https://github.com/jijinkh/CRater/blob/main/ScreenCapture/3.gif)
+
+
 * Vote your favourite courses.
-![ScreenCapture 2](https://github.com/jijinkh/CRater/blob/main/ScreenCapture/2.gif)
+	* ![ScreenCapture 2](https://github.com/jijinkh/CRater/blob/main/ScreenCapture/2.gif)
+
+
 * Multiple voting on a single course is not allowed
-![ScreenCapture 3](https://github.com/jijinkh/CRater/blob/main/ScreenCapture/1.gif)
+	* ![ScreenCapture 3](https://github.com/jijinkh/CRater/blob/main/ScreenCapture/1.gif)
 
 ## Running
 
